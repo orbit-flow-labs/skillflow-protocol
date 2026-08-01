@@ -1,0 +1,21 @@
+[workspace]
+resolver = "2"
+members = [
+    "contracts/skill_vault",
+    "contracts/skill_token",
+    "contracts/pog_verifier",
+]
+
+[profile.release]
+opt-level = "z"
+overflow-checks = true
+debug = false
+strip = "symbols"
+debug-assertions = false
+panic = "abort"
+codegen-units = 1
+
+[workspace.dependencies]
+ed25519-dalek = "=2.1.0"
+rand_core = "=0.6.4"
+
